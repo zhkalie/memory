@@ -3,7 +3,7 @@
 //when we get pulled away into a rushing current as time keeps ticking, neverending
 
 
-int a;
+float a;
 float s;
 
 color bowl = #E5D7D5;
@@ -20,6 +20,8 @@ void draw() {
  
  //---------(soon this will be a variable  that changes the scenery periodically)
   background(149, 118, 100);
+  
+  s = 0.1;
   
   noStroke();
   fill(bowl);
@@ -65,6 +67,16 @@ void draw() {
   star(490, 420, s);
   star(360, 500, s);
   star(50, 320, s);
+  
+  s = 0.25;
+  thestar(320, 250, a, s);
+  a = a + 0.1;
+  
+  
+  fill(0, 30);
+  noStroke();
+  quad(0, 0 , 0, 600, 380, 600, 220, 0);
+  
 }
 
 //- a scenery around the bowl thats always changing
@@ -94,7 +106,7 @@ void star(int x, int y, float scale) {
   popMatrix();
 }
 
-void thestar(int x, int y, int angle, float scale) {
+void thestar(int x, int y, float angle, float scale) {
   pushMatrix();
   translate(x, y);
   rotate(radians(angle));
